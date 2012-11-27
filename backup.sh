@@ -2,22 +2,23 @@
 
 #####################################################################
 #             Basic website and database backup script              #
-#   
-#
-#
-#
+#       Assumes database user with access to all database's         #
+#      Allows you to choose which domains you want to backup        #
+#   Ease of control for setting paths using variables at the top    #
+#####################################################################
+
 
 ##### SET VARIABLE DECLARATIONS #####
 
-DOMAINS_ROOT=~/
+DOMAINS_ROOT=/var/www/vhost # Path to domains root
 MAX_BACKUPS=3
-DATE=$(date "+%Y-%m-%d")
-DB_STAMP=dbdaily.backup
-SITE_STAMP=sitedaily.backup
-BACKUP_DIR=~/backups
-TMP=tmp
-DB_DIR=dbfiles
-SITE_DIR=sitefiles
+DATE=$(date "+%Y-%m-%d")    # Set date for year month day
+DB_STAMP=dbdaily.backup     # database naming scheme
+SITE_STAMP=sitedaily.backup # domain naming scheme
+BACKUP_DIR=~/backups        # Set backup directory
+TMP=tmp                     # tmp backup direcotry
+DB_DIR=dbfiles              # where database backups are stored
+SITE_DIR=sitefiles          # where domain backups are stored
 TMP_PATH=${BACKUP_DIR}/${TMP}
 DB_PATH=${BACKUP_DIR}/${DB_DIR}
 SITE_PATH=${BACKUP_DIR}/${SITE_DIR}
